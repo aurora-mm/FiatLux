@@ -1,6 +1,6 @@
 # Overview
 
-This repository contains the source code and Python tools for the **Fiat Lux** experimental podcast series website. The podcast series experiments with sounds, format, and delivery, offering something unexpected every episode. Originally generated using [CD-R 700mb](https://github.com/thebaer/cdr), the HTML structure has been customized to meet the podcast's specific requirements.
+This repository contains the source code and Python tools for the **Fiat Lux** experimental podcast series website. The podcast series experiments with sounds, format, and delivery, offering something unexpected every episode. Originally generated using [CD-R 700mb](https://github.com/thebaer/cdr), the HTML structure has been customized to meet the podcast's needs.
 
 # Repository Structure
 
