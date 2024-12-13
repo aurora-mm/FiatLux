@@ -1,6 +1,6 @@
 # Overview
 
-This repository contains two Python scripts to assist in releasing new episodes of the [Fiat Lux](https://aurora-mm.github.io/FiatLux/) podcast and updating the website. Follow the instructions below to validate and upload episodes, update the website and ensure consistency with the [Outreach](https://github.com/aurora-mm/Outreach) dashboard.
+This folder contains two Python scripts to assist in releasing new episodes of the [Fiat Lux](https://aurora-mm.github.io/FiatLux/) podcast and updating the website. Follow the instructions below to validate and upload episodes, update the website and ensure consistency with the [Outreach](https://github.com/aurora-mm/Outreach) dashboard.
 
 # Workflow
 
