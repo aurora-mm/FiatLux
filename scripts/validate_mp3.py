@@ -2,7 +2,8 @@
 
 import requests
 from mutagen.easyid3 import EasyID3
-from mutagen.id3 import ID3
+from mutagen.id3 import ID3, APIC
+from mutagen.mp3 import MP3
 from pydub.utils import mediainfo
 import os
 import re
@@ -30,7 +31,25 @@ def extract_mp3_metadata(file_path):
         "format": format_info
     }
 
-def validate_input_file(input_metadata, reference_metadata):
+def attach_artwork(file_path, artwork_path):
+    audio = MP3(file_path, ID3=ID3)
+    try:
+        audio.add_tags()
+    except:
+        pass  # Tags already exist
+    with open(artwork_path, "rb") as img:
+        audio.tags.add(
+            APIC(
+                encoding=3,  # UTF-8
+                mime="image/png",  # MIME type of the image
+                type=3,  # Front cover
+                desc="Cover",
+                data=img.read()
+            )
+        )
+    audio.save()
+
+def validate_input_file(input_metadata, reference_metadata, input_file):
     errors = []
 
     # Validate specific tags
@@ -50,6 +69,8 @@ def validate_input_file(input_metadata, reference_metadata):
     # Validate attached pictures
     if input_metadata["attached_picture"] != reference_metadata["attached_picture"]:
         errors.append("Attached pictures do not match.")
+        print("Cover artwork does not match. Replacing with local artwork.")
+        attach_artwork(input_file, "artwork.png")
 
     # Validate format
     if input_metadata["format"] != reference_metadata["format"]:
@@ -72,7 +93,7 @@ def main():
         reference_metadata = extract_mp3_metadata(reference_file)
 
         # Validate input file
-        errors = validate_input_file(input_metadata, reference_metadata)
+        errors = validate_input_file(input_metadata, reference_metadata, input_file)
 
         if errors:
             for error in errors:
