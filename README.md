@@ -10,7 +10,7 @@ This repository contains the source code and Python tools for the **Fiat Lux** e
 
 # Dependencies
 
-`requests`, `mutagen`, `pydub`, `json`, `BeautifulSoup`, `os`, `re`, `subprocess`
+`requests`, `mutagen`, `pydub`, `json`, `BeautifulSoup`, `os`, `re`, `subprocess`, `datetime`
 
 # Usage
 
