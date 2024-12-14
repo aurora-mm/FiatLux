@@ -6,7 +6,7 @@ This repository contains the source code and Python tools for the **Fiat Lux** e
 
 `index.html`: The main HTML file for the website, including embedded audio player and playlist functionality.
 
-`scripts/`: Contains Python scripts designed for validating MP3 files (to ensure they meet common podcast audio standards) and automating the process of adding new podcast episodes to the `index.html` file.
+`scripts/`: Contains Python scripts designed for converting and validating MP3 files (to ensure they meet common podcast audio standards) and automating the process of adding new podcast episodes to the `index.html` file.
 
 # Dependencies
 
